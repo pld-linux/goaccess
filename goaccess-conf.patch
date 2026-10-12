@@ -1,0 +1,23 @@
+# PLD paths in the commented examples: httpd log dir, system GeoIP databases
+--- goaccess-1.12.orig/config/goaccess.conf	2026-09-16 03:12:21.000000000 +0200
++++ goaccess-1.12/config/goaccess.conf	2026-10-12 12:52:44.150659859 +0200
+@@ -395,7 +395,7 @@
+ # Specify the path to the input log file. If set, it will take
+ # priority over -f from the command line.
+ #
+-#log-file /var/log/apache2/access.log
++#log-file /var/log/httpd/access_log
+ 
+ # Send all debug messages to the specified file.
+ #
+@@ -786,8 +786,8 @@
+ # Download the GeoLite2-ASN.mmdb.gz
+ # gunzip GeoLite2-ASN.mmdb.gz
+ #
+-#geoip-database /usr/local/share/GeoIP/GeoLite2-City.mmdb
+-#geoip-database /usr/local/share/GeoIP/GeoLite2-ASN.mmdb
++#geoip-database /usr/share/GeoIP/GeoLite2-City.mmdb
++#geoip-database /usr/share/GeoIP/GeoLite2-ASN.mmdb
+ 
+ # Exclude requests whose client address resolves to an ASN. This option can be
+ # repeated and accepts either 8075 or AS8075. It requires a GeoIP2 ASN database

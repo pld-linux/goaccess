@@ -1,0 +1,15 @@
+# AM_LDFLAGS = -lz drops -rdynamic, losing symbol names in the crash backtrace;
+# AC_CHECK_LIB already puts -lz in LIBS
+--- goaccess-1.12.orig/Makefile.am	2026-08-30 03:37:41.000000000 +0200
++++ goaccess-1.12/Makefile.am	2026-10-12 12:55:41.292971482 +0200
+@@ -269,10 +269,6 @@
+ AM_LDFLAGS = -rdynamic
+ endif
+ 
+-if WITH_ZLIB
+-AM_LDFLAGS = -lz
+-endif
+-
+ goaccess_LDADD = -lm
+ 
+ AM_CFLAGS += -Wall -Wextra -Wnested-externs -Wformat=2 -g
